@@ -4,6 +4,8 @@ import (
 	"context"
 	"sync"
 	"time"
+
+	"github.com/siakiera-solutions/logger"
 )
 
 type defaultT struct {
@@ -14,7 +16,7 @@ type defaultT struct {
 	tick func(ctx context.Context) error
 
 	op  string
-	log logger
+	log logger.Logger
 
 	interval time.Duration
 }
@@ -22,7 +24,7 @@ type defaultT struct {
 func Default(
 	tick func(ctx context.Context) error,
 	op string,
-	log logger,
+	log logger.Logger,
 	interval time.Duration,
 ) Timer {
 	ctx, cancel := context.WithCancel(context.Background())

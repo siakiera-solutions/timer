@@ -4,6 +4,8 @@ import (
 	"context"
 	"sync"
 	"time"
+
+	"github.com/siakiera-solutions/logger"
 )
 
 type fixed struct {
@@ -14,7 +16,7 @@ type fixed struct {
 	tick func(ctx context.Context) error
 
 	op  string
-	log logger
+	log logger.Logger
 
 	interval time.Duration
 	base     time.Time
@@ -23,7 +25,7 @@ type fixed struct {
 func Fixed(
 	tick func(ctx context.Context) error,
 	op string,
-	log logger,
+	log logger.Logger,
 	interval time.Duration,
 	base time.Time,
 ) Timer {
