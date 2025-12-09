@@ -1,4 +1,4 @@
-module github.com/Siakiera-Solutions/timer
+module github.com/siakiera-solutions/timer
 
 go 1.25
 
