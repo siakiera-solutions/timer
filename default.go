@@ -22,7 +22,6 @@ type defaultT struct {
 
 func Default(
 	tick func(ctx context.Context) error,
-	op string,
 	log logger.Logger,
 	interval time.Duration,
 ) Timer {
